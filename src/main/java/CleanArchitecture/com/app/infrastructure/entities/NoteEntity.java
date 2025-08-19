@@ -25,7 +25,7 @@ public class NoteEntity {
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
-    private  User owner;
+    private  UserEntity owner;
 
     private Boolean enabled;
 }

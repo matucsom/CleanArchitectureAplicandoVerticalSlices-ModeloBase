@@ -13,6 +13,11 @@ public class CreateNewUserResponse {
         this.email = builder.email;
     }
 
+    public CreateNewUserResponse(String email) {
+        this.id=null;
+        this.email= email;
+    }
+
     public Long getId() { return id; }
     public String getEmail() { return email; }
 

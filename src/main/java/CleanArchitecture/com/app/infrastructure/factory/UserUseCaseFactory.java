@@ -10,7 +10,7 @@ import CleanArchitecture.com.app.infrastructure.repositories.JpaUserRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+@Component
 public class UserUseCaseFactory {
 
     private final UserModelPort userModelPort;
@@ -21,7 +21,7 @@ public class UserUseCaseFactory {
         this.jpaUserRepository = jpaUserRepository;
     }
 
-    public CreateNewUser createNewUser() {
+    public CreateNewUser createNewUserUseCase() {
         return new CreateNewUserImpl(
                 new UserModelAdapter(jpaUserRepository),
                 new CreateNewUserValidator(),

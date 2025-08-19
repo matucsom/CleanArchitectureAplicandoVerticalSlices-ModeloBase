@@ -1,4 +1,4 @@
-package CleanArchitecture.com.app.config;
+package CleanArchitecture.com.app.infrastructure.config;
 
 import CleanArchitecture.com.app.application.user.createNewUser.usecase.CreateNewUserImpl;
 import CleanArchitecture.com.app.application.user.createNewUser.usecase.port.in.CreateNewUser;
@@ -12,9 +12,9 @@ import CleanArchitecture.com.app.infrastructure.repositories.JpaUserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
-public class UserBeansConfig {
 
+public class UserBeansConfig {
+/*
     // --- Validators (Application) ---
     @Bean
     public UserValidator userValidator() {
@@ -39,5 +39,5 @@ public class UserBeansConfig {
                                        UserValidator validator,
                                        UserPolicy userPolicy) {
         return new CreateNewUserImpl(userModelPort, validator, userPolicy);
-    }
+    }*/
 }

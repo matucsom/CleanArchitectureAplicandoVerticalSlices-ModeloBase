@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class UserEntity {
 
     @Id
@@ -25,8 +25,7 @@ public class UserEntity {
 
     private String password;
 
-    @OneToMany
-    @JoinColumn(name = "notes_id")
+    @OneToMany(mappedBy="owner")
     private List<NoteEntity> notes;
 
     private Boolean enabled;

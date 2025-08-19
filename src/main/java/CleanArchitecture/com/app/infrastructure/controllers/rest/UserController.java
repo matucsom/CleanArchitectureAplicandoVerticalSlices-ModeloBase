@@ -1,5 +1,6 @@
 package CleanArchitecture.com.app.infrastructure.controllers.rest;
 
+import CleanArchitecture.com.app.application.user.UserApplicationService;
 import CleanArchitecture.com.app.application.user.createNewUser.dto.CreateNewUserRequest;
 import CleanArchitecture.com.app.application.user.createNewUser.dto.CreateNewUserResponse;
 import CleanArchitecture.com.app.application.user.createNewUser.usecase.port.in.CreateNewUser;
@@ -14,17 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/users")
 public class UserController {
 
-    private final UserUseCaseFactory useCaseFactory;
+    private final UserApplicationService userApplicationService;
 
 
-    public UserController( UserUseCaseFactory userUseCaseFactory) {
-        this.useCaseFactory = userUseCaseFactory;
+    public UserController(UserUseCaseFactory userUseCaseFactory, UserApplicationService userApplicationService) {
+        this.userApplicationService = userApplicationService;
+
     }
 
     @PostMapping
     public ResponseEntity<CreateNewUserResponse> createUser(@RequestBody CreateNewUserRequest req) {
-        CreateNewUser createNewUser = useCaseFactory.createNewUser();
-        CreateNewUserResponse response=createNewUser.createNewUser(req);
+        CreateNewUserResponse  response= userApplicationService.createNewUser(req);
         return ResponseEntity.ok(response);
     }
 }

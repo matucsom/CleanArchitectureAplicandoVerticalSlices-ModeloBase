@@ -1,6 +1,8 @@
 package CleanArchitecture.com.app.domain.model;
 
 
+import lombok.Builder;
+
 import java.util.Collections;
 import java.util.List;
 
