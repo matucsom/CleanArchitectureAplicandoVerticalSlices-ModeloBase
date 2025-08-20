@@ -5,6 +5,7 @@ import CleanArchitecture.com.app.application.user.createNewUser.dto.CreateNewUse
 import CleanArchitecture.com.app.application.user.createNewUser.dto.CreateNewUserResponse;
 import CleanArchitecture.com.app.application.user.createNewUser.usecase.port.in.CreateNewUser;
 import CleanArchitecture.com.app.infrastructure.factory.UserUseCaseFactory;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,6 +19,7 @@ public class UserApplicationServiceImpl implements UserApplicationService {
 
 
     @Override
+    @Transactional
     public CreateNewUserResponse createNewUser(CreateNewUserRequest request) {
         return createNewUser.createNewUser(request);
     }

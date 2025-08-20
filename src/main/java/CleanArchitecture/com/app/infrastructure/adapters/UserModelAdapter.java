@@ -32,13 +32,15 @@ public class UserModelAdapter implements UserModelPort{
 
         } catch (Exception e){
             log.error(e.getMessage());
-            throw new SaveErrorException();
+           // throw new SaveErrorException();
+            throw new RuntimeException(e.getMessage());
         }
 
     }
 
     @Override
     public boolean existsByEmail(String email) {
-        return false;
+
+        return jpaUserRepository.existsByEmail(email);
     }
 }

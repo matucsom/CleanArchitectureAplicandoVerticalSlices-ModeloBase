@@ -25,13 +25,13 @@ public class CreateNewUserImpl implements CreateNewUser {
 
     public CreateNewUserResponse createNewUser(CreateNewUserRequest request) {
 
-        return new CreateNewUserResponse("respuesta exitosa");
+       // return new CreateNewUserResponse("respuesta exitosa");
 
-        /* validator.validate(request);
+        validator.validate(request);
         User user = CreateNewUserMapper.toDomain(request); //Ojito, mira abajo los comments
         userPolicy.checkCanRegister(user);
         User savedUser = userModelPort.save(user);
-        return CreateNewUserMapper.toResponse(savedUser);*/
+        return CreateNewUserMapper.toResponse(savedUser);
 
     }
 
